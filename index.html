@@ -3,12 +3,8 @@
     <title>Test</title>
   </head>
   <body>
-    <p>The next meeting is on <span id="0"></span></p>
+    <b1>The next meeting is on <span id="0"></span></b1>
     <p id="a"></p>
-    <p id="b"></p>
-    <p id="c"></p>
-    <p id="d"></p>
-    <p id="e"></p>
   
     <script>
       var int = setInterval(function() {
@@ -17,8 +13,10 @@
         var then = new Date(date).getTime();
         var now = new Date().getTime();
         var distanza = then - now
-        var secondi = Math.floor(distanza, 1000)
-        var minuti = Math.floor(distanza, 1000)
+        var giorni = distanza / 1000 / 60 / 60 / 24
+        var ore = giorni * 24 % 24
+        var minuti = ore * 60 % 60
+        var secondi = minuti * 60 % 60
         let a = date.substring(0, 2);
         let b = date.substring(3, 5);
         let c = date.substring(5, 10);
@@ -27,11 +25,7 @@
         newdate = b + "." + a + c + "at " + d
 
         document.getElementById("0").textContent = newdate;
-        document.getElementById("a").textContent = then - now;
-        document.getElementById("b").textContent = then;
-        document.getElementById("c").textContent = now;
-        document.getElementById("d").textContent = secondi;
-        document.getElementById("e").textContent = minuti;
+        document.getElementById("a").textContent = "Which is in" + giorni + "days, " + ore + "hours, " + minuti + "minutes, and " + secondi + "seconds.";
       });
     </script>
   </body>
