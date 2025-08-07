@@ -25,7 +25,7 @@
         newdate = b + "." + a + c + "at " + d
 
         document.getElementById("0").textContent = newdate;
-        document.getElementById("a").textContent = "Which is in" + giorni + "days, " + ore + "hours, " + minuti + "minutes, and " + secondi + "seconds.";
+        document.getElementById("a").textContent = "Which is in" + Math.floor(giorni) + "days, " + Math.floor(ore) + "hours, " + Math.floor(minuti) + "minutes, and " + Math.floor(secondi) + "seconds.";
       });
     </script>
   </body>
