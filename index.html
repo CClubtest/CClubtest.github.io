@@ -3,7 +3,7 @@
     <title>Test</title>
   </head>
   <body>
-    <p>The next meeting will be on the <span id="0"></span></p>
+    <p>The next meeting is on <span id="0"></span></p>
     <p id="a"></p>
     <p id="b"></p>
     <p id="c"></p>
@@ -22,8 +22,9 @@
         let a = date.substring(0, 2);
         let b = date.substring(3, 5);
         let c = date.substring(5);
+        let d = date.substring(11, 11);
 
-        newdate = b + "." + a + c
+        newdate = b + "." + a + c + "at " + d
 
         document.getElementById("0").textContent = newdate;
         document.getElementById("a").textContent = then - now;
