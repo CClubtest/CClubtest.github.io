@@ -3,6 +3,7 @@
     <title>Test</title>
   </head>
   <body>
+    <p id="0"></p>
     <p id="a"></p>
     <p id="b"></p>
     <p id="c"></p>
@@ -11,16 +12,18 @@
   
     <script>
       var int = setInterval(function() {
-        var then = new Date("05.09.2025 13:40").getTime();
+        const date = "05.09.2025 13:40"
+        var then = new Date(date).getTime();
         var now = new Date().getTime();
         var distanza = then - now
         var secondi = Math.floor(distanza, 1000)
         var minuti = Math.floor(distanza, 1000)
-        document.getElementById("a").textContent =   then - now;
-        document.getElementById("b").textContent =   then;
-        document.getElementById("c").textContent =   now;
-        document.getElementById("d").textContent =   secondi;
-        document.getElementById("e").textContent =   minuti;
+        document.getElementById("0").textContent = date;
+        document.getElementById("a").textContent = then - now;
+        document.getElementById("b").textContent = then;
+        document.getElementById("c").textContent = now;
+        document.getElementById("d").textContent = secondi;
+        document.getElementById("e").textContent = minuti;
       });
     </script>
   </body>
