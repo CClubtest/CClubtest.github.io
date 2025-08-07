@@ -3,7 +3,7 @@
     <title>Test</title>
   </head>
   <body>
-    <p id="0"></p>
+    <p>The next meeting will be on the <span id="0"></span></p>
     <p id="a"></p>
     <p id="b"></p>
     <p id="c"></p>
@@ -12,14 +12,20 @@
   
     <script>
       var int = setInterval(function() {
-        // use American format
+        // use American format for internal date, will be changed in the out
         const date = "09.05.2025 13:40"
         var then = new Date(date).getTime();
         var now = new Date().getTime();
         var distanza = then - now
         var secondi = Math.floor(distanza, 1000)
         var minuti = Math.floor(distanza, 1000)
-        document.getElementById("0").textContent = date;
+        let a = date.substring(0, 2);
+        let b = date.substring(3, 5);
+        let c = date.substring(5);
+
+        newdate = b + a + c
+
+        document.getElementById("0").textContent = newdate;
         document.getElementById("a").textContent = then - now;
         document.getElementById("b").textContent = then;
         document.getElementById("c").textContent = now;
